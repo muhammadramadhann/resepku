@@ -1,0 +1,1 @@
+<x-app-layout title="Tambah Resep"></x-app-layout>

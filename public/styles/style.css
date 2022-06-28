@@ -1,0 +1,46 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+
+.bg-resepku {
+    background-color: #547794;
+}
+
+.text-resepku {
+    color: #547794;
+}
+
+.navbar-nav a {
+    font-size: 20px;
+}
+
+.bg-footer {
+    background-color: #c4c4c4;
+}
+
+.card .btn-secondary {
+    background: #c2c9cd;
+    border: 1px solid #c2c9cd;
+    color: #000000;
+    border-radius: 12px;
+}
+
+.card .btn-secondary:hover {
+    background: #afb5b9;
+    border: 1px solid #c2c9cd;
+}
+
+.card .text-muted {
+    color: #666666 !important;
+}
+
+.recipe-item .card {
+    border: none;
+    width: 350px;
+}
+
+@media screen and (max-width: 1024px) {
+    .recipe-item .card {
+        width: 100%;
+    }
+}
