@@ -16,6 +16,9 @@
     </head>
     <body class="d-flex flex-column min-vh-100">
         <x-navbar/>
+        @if (session('success'))
+            <x-alert info="success"/>
+        @endif
         <main class="container my-md-4 my-2 py-4">
             {{ $slot }}
         </main>

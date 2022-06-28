@@ -6,12 +6,23 @@
     background-color: #547794;
 }
 
-.text-resepku {
+.text-resepku,
+.text-resepku:hover {
     color: #547794;
 }
 
+.btn-resepku {
+    background-color: #547794;
+    color: #ffffff;
+}
+
+.btn-resepku:hover {
+    background-color: #47657e;
+    color: #ffffff;
+}
+
 .navbar-nav a {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .bg-footer {
@@ -39,8 +50,14 @@
     width: 350px;
 }
 
+.auth {
+    width: 600px;
+    border: 1px solid #c2c9cd;
+}
+
 @media screen and (max-width: 1024px) {
-    .recipe-item .card {
+    .recipe-item .card,
+    .auth {
         width: 100%;
     }
 }
