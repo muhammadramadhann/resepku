@@ -18,9 +18,10 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('identifier')->unique();
             $table->string('title');
-            $table->string('description');
-            $table->string('ingredients');
-            $table->string('cooking_steps');
+            $table->text('excerpt');
+            $table->text('description');
+            $table->json('ingredients');
+            $table->json('cooking_steps');
             $table->string('image');
             $table->integer('likes')->nullable();
             $table->timestamps();

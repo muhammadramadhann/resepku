@@ -26,7 +26,6 @@
                 <div class="mb-4">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password ..." value="{{ old('password') }}">
-                    <i class="fa-solid fa-eye-slash" id="togglePassword" onclick=""></i>
                     @error('password')
                         <div class="text-danger mt-2">
                             {{ $message }}

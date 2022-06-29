@@ -13,10 +13,21 @@ class Recipe extends Model
         'user_id',
         'identifier',
         'title',
+        'excerpt',
         'description',
         'ingredients',
         'cooking_steps',
         'image',
         'likes'
     ];
+
+    protected $casts = [
+        'ingredients' => 'array',
+        'cooking_steps' => 'array'
+    ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
