@@ -11,13 +11,15 @@ class RecipeItem extends Component
      *
      * @return void
      */
+    public $id;
     public $slug;
     public $likes;
     public $title;
     public $image;
     public $excerpt;
-    public function __construct($slug, $likes, $title, $image, $excerpt)
+    public function __construct($id, $slug, $likes, $title, $image, $excerpt)
     {
+        $this->id = $id;
         $this->slug = $slug;
         $this->likes = $likes == null ? 0 : $likes;
         $this->title = $title;

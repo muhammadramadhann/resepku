@@ -1,4 +1,4 @@
-let i = 0;
+let i = 1;
 $("#more-ingredients").click(function () {
     ++i;
     $("#multipleFieldIngredients").append(

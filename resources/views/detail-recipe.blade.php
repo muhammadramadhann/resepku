@@ -5,17 +5,17 @@
         </div>
         <div class="mb-4">
             <h1 class="mb-2">{{ $recipe->title }}</h1>
-            <h6 class="fw-normal">{{ $recipe->description }}</h6>
+            <h6 class="fw-normal lh-lg">{{ $recipe->description }}</h6>
         </div>
         <div class="mb-4">
             <h2>Bahan - bahan</h2>
             @foreach ($recipe->ingredients as $ingredient)
-                <div>{{ $ingredient }}</div>
+                <div class="lh-lg">{{ $ingredient }}</div>
             @endforeach
         </div>
         <div class="mb-4">
             <h2>Langkah Pembuatan</h2>
-            <ol class="ps-4">
+            <ol class="ps-md-4 ps-3 lh-lg">
                 @foreach ($recipe->cooking_steps as $cooking_step)
                     <li>{{ $cooking_step }}</li>
                 @endforeach

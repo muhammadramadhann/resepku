@@ -9,6 +9,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class Recipe extends Model
 {
     use HasFactory, Sluggable;
+
     protected $table = 'recipes';
     protected $fillable = [
         'user_id',
@@ -39,5 +40,10 @@ class Recipe extends Model
     public function users()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 }

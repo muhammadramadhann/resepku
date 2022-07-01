@@ -3,8 +3,8 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +24,13 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/resep/{slug}', [HomeController::class, 'detail'])->name('detail-recipe');
+    Route::get('/', [RecipeController::class, 'index'])->name('home');
+    Route::get('/resep/{slug}', [RecipeController::class, 'detail'])->name('detail-recipe');
 
-    Route::get('/tulis-resep', [RecipeController::class, 'index'])->name('add-recipe');
+    Route::get('/tulis-resep', [RecipeController::class, 'create'])->name('add-recipe');
     Route::post('/tulis-resep', [RecipeController::class, 'store'])->name('add-recipe');
+
+    Route::get('/resep/like/{id}', [LikeController::class, 'like'])->name('recipe.like');
 
     Route::post('logout', LogoutController::class)->name('logout');
 });

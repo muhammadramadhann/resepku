@@ -11,7 +11,7 @@
             <p class="card-text fw-normal text-black">{{ $excerpt }}</p>
         </div>
         <div class="card-body pb-0 px-0">
-            <a href="" class="btn btn-secondary py-2 w-100" onclick="event.preventDefault()">Suka</a>
+            <a href="{{ route('recipe.like', $id) }}" class="btn btn-secondary py-2 w-100">Suka</a>
         </div>
     </div>
 </div>

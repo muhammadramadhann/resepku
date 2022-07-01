@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use App\Models\Recipe;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Providers\RouteServiceProvider;
@@ -11,6 +12,17 @@ use Illuminate\Support\Str;
 class RecipeController extends Controller
 {
     public function index()
+    {
+        $recipes = Recipe::latest()->get();
+        $likes = Like::latest()->get();
+
+        return view('home', [
+            'recipes' => $recipes,
+            'likes' => $likes
+        ]);
+    }
+
+    public function create()
     {
         return view('add-recipe');
     }
@@ -23,8 +35,8 @@ class RecipeController extends Controller
         $request->validate([
             'title' => 'required|min:3',
             'description' => 'required',
-            'add_more.*.ingredients' => 'required',
-            'add_more.*.cooking_steps' => 'required',
+            'add_more_ingredients.0.ingredients' => 'required',
+            'add_more_cooking_steps.0.cooking_steps' => 'required',
             'image' => ['required', 'image', 'mimes:png,jpg,jpeg,svg,PNG,JPG,JPEG', 'max:2048'],
         ]);
 
@@ -47,12 +59,20 @@ class RecipeController extends Controller
             'slug' => SlugService::createSlug(Recipe::class, 'slug', $request->title . '-' . strtolower(Str::random(8))),
             'title' => $request->title,
             'description' => $request->description,
-            'excerpt' => Str::limit(strip_tags($request->description), 100),
+            'excerpt' => Str::limit(strip_tags($request->description), 72),
             'ingredients' => $ingredients,
             'cooking_steps' => $cooking_steps,
             'image' => $image,
         ]);
 
         return redirect(RouteServiceProvider::HOME)->with('success', 'Yeay! Resep Kamu Berhasil Diterbitkan 😋');
+    }
+
+    public function detail($slug)
+    {
+        $recipe = Recipe::where('slug', $slug)->first();
+        return view('detail-recipe', [
+            'recipe' => $recipe
+        ]);
     }
 }
