@@ -7,57 +7,37 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## How to Run Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Untuk menjalankan projek dapat mengikuti langkah-langkah berikut.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Jalankan ``` git clone https://github.com/muhammadramadhann/resepku.git ``` pada direktori lokal
+- Buka folder proyek, lalu jalankan  ```composer install```
+- Jalankan ```cp .env.example .env```
+- Buka file .env dan ubah DB_DATABASE sesuai nama database diinginkan lalu buat database dengan nama tersebut di phpmyadmin (MySQL)
+- Jalankan ```Run php artisan key:generate```
+- Jalankan ```php artisan migrate``` untuk me-generate tabel kedalam database
+- Jalankan ```php artisan serve```
+- Masuk ke browser pada url <a href="http://localhost:8000">http://localhost:8000</a>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Additional (Import Sample Data)
 
-## Learning Laravel
+Apabila ingin menggunakan data sampel yang sudah ada, dapat melakukan import menggunakan file sql berikut.
+- <a href="https://drive.google.com/file/d/1qcU_4vJH2zWKkeDAwS9r0PNTYi81-G43/view?usp=sharing">Data Resepku</a>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Database ERD
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![Resepku@1 25x](https://user-images.githubusercontent.com/83332442/176915726-4eb6c707-060e-43cc-91bf-09451b84362e.png)
 
-## Laravel Sponsors
+## Preview
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![home](https://user-images.githubusercontent.com/83332442/176915568-0f66cca1-647e-4fb9-be5e-a572ece541b5.png)
 
-### Premium Partners
+![add](https://user-images.githubusercontent.com/83332442/176915644-17e998b5-7004-49d3-a638-2a4e6ba89573.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![register](https://user-images.githubusercontent.com/83332442/176915662-a417f663-07c2-455d-813c-24c2dbce8803.png)
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![login](https://user-images.githubusercontent.com/83332442/176915687-79cc5953-6e6b-4297-9830-4fd00531de4c.png)
 
 ## License
 
