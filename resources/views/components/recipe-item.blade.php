@@ -1,5 +1,5 @@
 <div class="col-xl-4 col-lg-6 col-12 d-flex align-items-stretch">
-    <div class="card flex-fill mb-md-5 mb-4">
+    <div class="card flex-fill mb-4">
         <a href="{{ route('detail-recipe', $slug) }}" class="text-decoration-none d-block">
             <img src="images/recipe_images/{{ $image }}" class="card-img-top" alt="gambar-resep">
             <div class="card-body px-0">
