@@ -1,6 +1,6 @@
 <div class="col-xl-4 col-lg-6 col-12">
     <div class="card h-100 mb-md-5 mb-4">
-        <a href="{{ route('detail-recipe', $identifier) }}" class="text-decoration-none">
+        <a href="{{ route('detail-recipe', $slug) }}" class="text-decoration-none">
             <img src="images/recipe_images/{{ $image }}" class="card-img-top" alt="gambar-resep">
             <div class="card-body pb-0 px-0">
                 <h6 class="card-subtitle mb-2 text-muted fw-normal"><span>{{ $likes }}</span> Orang Menyukai ini</h6>

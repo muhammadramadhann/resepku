@@ -15,9 +15,9 @@ class HomeController extends Controller
         ]);
     }
 
-    public function detail($identifier)
+    public function detail($slug)
     {
-        $recipe = Recipe::where('identifier', $identifier)->first();
+        $recipe = Recipe::where('slug', $slug)->first();
         return view('detail-recipe', [
             'recipe' => $recipe
         ]);

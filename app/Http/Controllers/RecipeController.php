@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -16,6 +17,9 @@ class RecipeController extends Controller
 
     public function store(Request $request)
     {
+        $ingredients = [];
+        $cooking_steps = [];
+
         $request->validate([
             'title' => 'required|min:3',
             'description' => 'required',
@@ -30,9 +34,6 @@ class RecipeController extends Controller
             $request->image->move(public_path('images/recipe_images'), $image);
         }
 
-        $ingredients = [];
-        $cooking_steps = [];
-
         foreach ($request->add_more_ingredients as $value) {
             array_push($ingredients, $value['ingredients']);
         }
@@ -43,10 +44,10 @@ class RecipeController extends Controller
 
         Recipe::create([
             'user_id' => auth()->user()->id,
-            'identifier' => strtolower(Str::random(24)),
+            'slug' => SlugService::createSlug(Recipe::class, 'slug', $request->title . '-' . strtolower(Str::random(8))),
             'title' => $request->title,
             'description' => $request->description,
-            'excerpt' => Str::limit(strip_tags($request->description), 150),
+            'excerpt' => Str::limit(strip_tags($request->description), 100),
             'ingredients' => $ingredients,
             'cooking_steps' => $cooking_steps,
             'image' => $image,

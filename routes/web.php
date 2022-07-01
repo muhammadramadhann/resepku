@@ -25,7 +25,7 @@ Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/resep/{identifier}', [HomeController::class, 'detail'])->name('detail-recipe');
+    Route::get('/resep/{slug}', [HomeController::class, 'detail'])->name('detail-recipe');
 
     Route::get('/tulis-resep', [RecipeController::class, 'index'])->name('add-recipe');
     Route::post('/tulis-resep', [RecipeController::class, 'store'])->name('add-recipe');
